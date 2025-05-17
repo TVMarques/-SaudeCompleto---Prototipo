@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, Linking } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import TituloSaudeComponent from '../components/TituloSaudeComponent';
-import BotaoSaudeComponent from '../components/BotaoSaudeGrandeComponent';
+import BotaoSaudeComponent from '../components/BotaoSaudeComponent';
 import BotaoImagemComponent from '../components/BotaoImagemComponent';
 
 export default function InfomacoesDicasScreen({ navigation }) {
@@ -12,27 +12,27 @@ export default function InfomacoesDicasScreen({ navigation }) {
 
   const cards = [
     {
-      image: require('../../assets/images/Group 57.png'),
+      image: require('../../assets/images/doencas.png'),
       url: 'https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/doencas-diarreicas-agudas/doencas-infecciosas-e-parasitarias_-guia-de-bolso.pdf/view'
     },
     {
-      image: require('../../assets/images/Group 57.png'),
+      image: require('../../assets/images/vacinas.png'),
       url: 'https://www.gov.br/saude/pt-br/campanhas-da-saude/vacinacao'
     },
     {
-      image: require('../../assets/images/Group 57.png'),
+      image: require('../../assets/images/saude mental.png'),
       url: 'https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-mental'
     },
     {
-      image: require('../../assets/images/Group 57.png'),
+      image: require('../../assets/images/Gravidez.png'),
       url: 'https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/g/gravidez/pre-natal'
     },
     {
-      image: require('../../assets/images/Group 57.png'),
+      image: require('../../assets/images/Alimentacao.png'),
       url: 'https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-crianca/primeira-infancia/alimentacao-saudavel'
     },
     {
-      image: require('../../assets/images/Group 57.png'),
+      image: require('../../assets/images/Bem estar.png'),
       url: 'https://www.gov.br/servidor/pt-br/assuntos/contecomigo/paginas/paginas-dos-hyperlinks/bem-estar-e-saude-1'
     },
   ];

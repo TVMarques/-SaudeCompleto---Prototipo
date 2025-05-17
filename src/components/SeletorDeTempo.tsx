@@ -127,7 +127,7 @@ selectorBox: {
 textoHorario: {
   fontSize: 18,
   fontFamily: 'Rubik-SemiBold',
-  color: '#0E5ED6',
+  color: '#153A71',//'#0E5ED6',
   position: 'relative',
   bottom: 12
 },
@@ -161,7 +161,7 @@ modalContent: {
   alignItems: 'center',
 },
 horarioBotao: {
-  backgroundColor: '#0E5ED6',
+  backgroundColor: '#153A71',//'#0E5ED6',
   paddingVertical: 8,
   paddingHorizontal: 12,
   margin: 6,

@@ -11,7 +11,7 @@ import * as FileSystem from 'expo-file-system';
 import TituloSaudeComponent from '../components/TituloSaudeComponent';
 import BotaoSaudeComponent from '../components/BotaoSaudeComponent';
 
-export default function AgendamentoScreen({ navigation }) {
+export default function AgendamentoExameScreen({ navigation }) {
   const [especialidade, setEspecialidade] = useState('');
   const [local, setLocal] = useState('');
   const [data, setData] = useState('');
@@ -52,7 +52,7 @@ export default function AgendamentoScreen({ navigation }) {
         await FileSystem.writeAsStringAsync(caminhoArquivo, conteudo);
   
         // Após salvar, navega para a tela 'Sucesso'
-        navigation.navigate('Sucesso', {tipo: 'consulta'});
+        navigation.navigate('Sucesso', {tipo: 'exame'});
       } catch (erro) {
         // Exibe mensagem de erro se algo der errado
         console.error('Erro ao salvar agendamento:', erro);
@@ -68,7 +68,7 @@ export default function AgendamentoScreen({ navigation }) {
     <LinearGradient colors={['#79DDF3', '#5E845F']} style={styles.container}>
 
      <TituloSaudeComponent
-        rotulo='AGENDAMENTO DE CONSULTAS'
+        rotulo='AGENDAMENTO DE EXAMES'
         containerStyle={{position:'relative', bottom: 60, paddingHorizontal: 6, paddingVertical: 4,}}//Usando a props para mexer no estilo do componente
         textStyle={{fontSize: 15}}
     />
@@ -87,9 +87,10 @@ export default function AgendamentoScreen({ navigation }) {
                 }}
                 items={[
                   { label: '', value: 'Selecione a especialidade' },
-                  { label: 'Cardiologia', value: 'Cardiologia' },
-                  { label: 'Oftalmologia', value: 'Oftalmologia' }
-
+                  { label: 'Ultrassonografia', value: 'Ultrassonografia' },
+                  { label: 'Raio-x', value: 'Raio-x' },
+                  { label: 'Urina', value: 'Urina' },
+                  { label: 'Sangue', value: 'Sangue'}
                 ]}
                 value={especialidade}
                 placeholder={{}} 
@@ -124,8 +125,10 @@ export default function AgendamentoScreen({ navigation }) {
                     }}
                   items={[
                     { label: '', value: 'Selecione o local' },
-                    { label: 'Hospital Geral', value: 'Hospital Geral' },
-                    { label: 'Clínica Geral', value: 'Clínica Geral' }
+                    { label: 'Laboratório Unidade Centro', value: 'Laboratório Unidade Centro' },
+                    { label: 'Laboratório Unidade Leste', value: 'Laboratório Unidade Leste' },
+                    { label: 'Laboratório Unidade Oeste', value: 'Laboratório Unidade Oeste' },
+                    { label: 'Laboratório Unidade Sul', value: 'Laboratório Unidade Sul' },
                   ]}
                   value={local}
                   placeholder={{  }}

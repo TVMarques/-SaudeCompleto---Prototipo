@@ -1,36 +1,45 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet, Image} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRoute } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import TituloSaudeComponent from '../components/TituloSaudeComponent';
+import BotaoSaudeComponent from '../components/BotaoSaudeComponent';
+import MensagemSucessoComponent from '../components/MensagemSucessoComponent';
 
-export default function SucessoScreen({ navigation }) {
-  const [fontsLoaded] = useFonts({
-    'Rubik-SemiBold': require('../../assets/fonts/Rubik-SemiBold.ttf'),
-    'Rubik-Bold': require('../../assets/fonts/Rubik-Bold.ttf'),
-  });
+export default function SucessoScreen({ navigation }) { 
 
-   if (!fontsLoaded) {
-    return null;
+  const route = useRoute();
+  const { tipo } = route.params;
+
+  let mensagem = '';
+  if (tipo === 'consulta') {
+    mensagem = 'Agendamento da consulta realizado com sucesso!';
+  } else if (tipo === 'exame') {
+    mensagem = 'Agendamento do exame realizado com sucesso!';
+  } else {
+    mensagem = 'Agendamento realizado com sucesso!';
   }
-  
+
   return (
     <LinearGradient colors={['#79DDF3', '#5E845F']} style={styles.container}>
+         <BotaoSaudeComponent //o botão primeiro, senão não funciona.
+          rotulo='Voltar'
+          onPress={() => navigation.goBack()}
+          estiloContainer={{ width: 95, position:'relative', top: 585, left: 148 }}
+          estiloTexto={{fontSize: 16, paddingVertical: 4}}
+       />      
+
         <TituloSaudeComponent
                 rotulo='AGENDAMENTO DE CONSULTAS'
-                containerStyle={{position:'relative', bottom: 60, paddingHorizontal: 6, paddingVertical: 4,}}//Usando a props para mexer no estilo do componente
-                textStyle={{fontSize: 14}}
+                containerStyle={{position:'relative', bottom: 110, paddingHorizontal: 6, paddingVertical: 4,}}//Usando a props para mexer no estilo do componente
+                textStyle={{fontSize: 15}}
         />
 
-       <View style={styles.card}>
-          <View style={styles.containerText}>
-             <Text style={styles.text}>Agendamento da consulta realizado com sucesso!</Text>
-          </View>
-       </View>
-
-      <View style={styles.button}>
-        <Button title="Voltar"  onPress={() => navigation.goBack()} color={'#246536'} ></Button>
-      </View>
+        <MensagemSucessoComponent
+          mensagem={mensagem}
+          estiloCard={{position: 'relative', bottom: 50}}
+        />
     </LinearGradient>
   );
 }
@@ -51,44 +60,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 55
   },
-
-  card: {
-    backgroundColor: '#0E5ED6',
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
-    padding: 2,
-    width: 370,
-    height: 24,
-    marginBottom: 560,
-    marginLeft: 6
-  },
-
-  containerText: {
-    width: 365,
-    height: 300,
-    marginTop: 20,
-    backgroundColor: '#f0f0f0',
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
-    overflow: 'hidden', // Isso faz o conteúdo respeitar o border radius
-  },
-
-  text:{
-      textAlign: 'center',
-      color:'#0E5ED6',
-      fontSize: 26,
-      fontWeight: 600,
-      marginTop: 90,
-      fontFamily: 'Rubik-Bold'
-  },
-
-   button:{
-    width: 115,
-    height: 31,
-    marginLeft: 138,
-    position: 'relative',
-    bottom: 185,
-    borderRadius: 32,
-    overflow: 'hidden',
-   },
+  
 });

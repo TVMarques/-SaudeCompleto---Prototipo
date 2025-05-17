@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import TituloSaudeComponent from '../components/TituloSaudeComponent';
-import BotaoSaudeComponent from '../components/BotaoSaudeGrandeComponent';
+import BotaoSaudeComponent from '../components/BotaoSaudeComponent';
 import BotaoImagemComponent from '../components/BotaoImagemComponent';
 
 
@@ -21,7 +21,7 @@ export default function OpcoesScreen({navigation}){
               />
 
               <BotaoImagemComponent
-                onPress={() => navigation.navigate('Login')}
+                onPress={() => navigation.navigate('AgendamentoExame')}
                 imageSource={require('../../assets/images/AgendamentoExame.png')}
               />
 
@@ -43,7 +43,7 @@ export default function OpcoesScreen({navigation}){
               />
 
               <BotaoImagemComponent
-                onPress={() => navigation.navigate('Login')}
+                onPress={() => navigation.navigate('EditarEExcluir')}
                 imageSource={require('../../assets/images/ExcEditar.png')}
               />
             </View>

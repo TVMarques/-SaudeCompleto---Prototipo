@@ -4,6 +4,10 @@ import OpcoesScreen from '../pages/OpcoesScreen';
 import AgendamentoScreen from '../pages/AgendamentoScreen';
 import SucessoScreen from '../pages/SucessoScreen';
 import InfomacoesDicasScreen from '../pages/InformacoesDicasScreen';
+import AgendamentoExameScreen from '../pages/AgendamentoExamesScreen';
+import EditarEExcluirScreen from '../pages/EditarEExcluirScreen';
+import TelaDesejaExcluir from '../pages/TelaDesejaExcluir';
+import TelaExcluidoSucesso from '../pages/TelaExcluidoSucesso';
 import { LinearGradient } from 'expo-linear-gradient';
 import { View, Text, Button, StyleSheet, Image} from 'react-native';
 
@@ -33,6 +37,12 @@ export default function AppNavigator() {
             />
 
              <Stack.Screen
+              name="AgendamentoExame"
+              component={AgendamentoExameScreen}
+              options={{ headerShown: false }}
+            />
+
+             <Stack.Screen
               name="Sucesso"
               component={SucessoScreen}
               options={{ headerShown: false }}
@@ -41,6 +51,24 @@ export default function AppNavigator() {
              <Stack.Screen
               name="InfoDica"
               component={InfomacoesDicasScreen}
+              options={{ headerShown: false }}
+            />
+
+            <Stack.Screen
+              name="EditarEExcluir"
+              component={EditarEExcluirScreen}
+              options={{ headerShown: false }}
+            />
+
+            <Stack.Screen
+              name="TelaDesejaExcluir"
+              component={TelaDesejaExcluir}
+              options={{ headerShown: false }}
+            />
+
+            <Stack.Screen
+              name="TelaExcluidoSucesso"
+              component={TelaExcluidoSucesso}
               options={{ headerShown: false }}
             />
         </Stack.Navigator>
