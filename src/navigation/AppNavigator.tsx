@@ -8,6 +8,7 @@ import AgendamentoExameScreen from '../pages/AgendamentoExamesScreen';
 import EditarEExcluirScreen from '../pages/EditarEExcluirScreen';
 import TelaDesejaExcluir from '../pages/TelaDesejaExcluir';
 import TelaExcluidoSucesso from '../pages/TelaExcluidoSucesso';
+import AjudaSuporte from '../pages/AjudaSuporte';
 import { LinearGradient } from 'expo-linear-gradient';
 import { View, Text, Button, StyleSheet, Image} from 'react-native';
 
@@ -69,6 +70,12 @@ export default function AppNavigator() {
             <Stack.Screen
               name="TelaExcluidoSucesso"
               component={TelaExcluidoSucesso}
+              options={{ headerShown: false }}
+            />
+
+             <Stack.Screen
+              name="AjudaSuporte"
+              component={AjudaSuporte}
               options={{ headerShown: false }}
             />
         </Stack.Navigator>

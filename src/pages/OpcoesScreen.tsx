@@ -38,7 +38,7 @@ export default function OpcoesScreen({navigation}){
               />
 
               <BotaoImagemComponent
-                onPress={() => navigation.navigate('Login')}
+                onPress={() => navigation.navigate('AjudaSuporte')}
                 imageSource={require('../../assets/images/Ajuda.png')}
               />
 
