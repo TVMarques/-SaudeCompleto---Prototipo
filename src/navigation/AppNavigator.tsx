@@ -9,6 +9,8 @@ import EditarEExcluirScreen from '../pages/EditarEExcluirScreen';
 import TelaDesejaExcluir from '../pages/TelaDesejaExcluir';
 import TelaExcluidoSucesso from '../pages/TelaExcluidoSucesso';
 import AjudaSuporte from '../pages/AjudaSuporte';
+import HistoricoPaciente from '../pages/HistoricoPaciente';
+import MedicalForm from '../pages/Anamnese';
 import { LinearGradient } from 'expo-linear-gradient';
 import { View, Text, Button, StyleSheet, Image} from 'react-native';
 
@@ -78,6 +80,19 @@ export default function AppNavigator() {
               component={AjudaSuporte}
               options={{ headerShown: false }}
             />
+
+            <Stack.Screen
+              name="HistoricoPaciente"
+              component={HistoricoPaciente}
+              options={{ headerShown: false }}
+            />
+
+            <Stack.Screen
+              name="Anamnese"
+              component={MedicalForm}
+              options={{ headerShown: false }}
+            />
+
         </Stack.Navigator>
    
   );

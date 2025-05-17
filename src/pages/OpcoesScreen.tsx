@@ -26,7 +26,7 @@ export default function OpcoesScreen({navigation}){
               />
 
               <BotaoImagemComponent
-                onPress={() => navigation.navigate('Login')}
+                onPress={() => navigation.navigate('HistoricoPaciente')}
                 imageSource={require('../../assets/images/HistoricoPaciente.png')}
               />
             </View>

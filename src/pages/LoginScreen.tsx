@@ -43,6 +43,7 @@ export default function LoginScreen({navigation}) {
 
                   <BotaoSaudeComponent
                       rotulo='Não é cadastrado? Clique aqui'
+                      onPress={() => navigation.navigate('Anamnese')}
                   />
                 </View>
            </ScrollView>
