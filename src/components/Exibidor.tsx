@@ -24,50 +24,59 @@ export default function Exibidor({ opcoes, titulo }: PropsSeletor) {
                 </Text>
             </View>
 
-            <View >
+            <View>
                 <TouchableOpacity
-                    style={styles.titulo}
+                    style={styles.touchable}
                     onPress={() => setAberto(!aberto)}
                 >
 
                     <View style={styles.iconCircle2}>
                         <Icon name="arrow-drop-down" size={22} color="#246536" />
                     </View>
-
+                    
+                    {aberto && (
+                    <View>
+                        {opcoes.map((opcao) => (
+                            <View key={opcao.valor} style={styles.item}>
+                                <Text style={styles.rotulo}>{opcao.rotulo}</Text>
+                            </View>
+                        ))}
+                    </View>
+                )}
                 </TouchableOpacity>
+
+
+                
+
             </View>
 
 
-            {aberto && (
-                <View style={styles.lista}>
-                    {opcoes.map((opcao) => (
-                        <View key={opcao.valor} style={styles.item}>
-                            <Text style={styles.rotulo}>{opcao.rotulo}:</Text>
-                            <Text style={styles.valor}>{opcao.valor}</Text>
-                        </View>
-                    ))}
-                </View>
-            )}
+
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        margin: 20,
-        borderRadius: 10,
-        borderWidth: 1,
-        borderColor: '#ccc',
+        marginBottom: 20,
+        marginInline: 20,
         overflow: 'hidden',
     },
 
     containerTitulo: {
-        backgroundColor: '#153A71'
+        borderTopRightRadius: 70,
+        borderTopLeftRadius: 70,
+        backgroundColor: '#153A71',
+        paddingInline: 6,
     },
 
-    titulo: {
+    
+    touchable: {
         backgroundColor: '#fff',
-        padding: 12,
+        paddingInline: 16,
+        paddingBlock: 6,
+        borderBottomRightRadius: 20,
+        borderBottomLeftRadius: 20,
     },
     tituloTexto: {
         color: '#fff',
@@ -86,20 +95,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#fff',
         marginLeft: 298
-   },
-
-    lista: {
-        backgroundColor: '#f9f9f9',
-        padding: 10,
     },
+
     item: {
-        marginBottom: 8,
+        marginBottom: 4,
     },
     rotulo: {
         fontWeight: 'bold',
-        color: '#333',
-    },
-    valor: {
-        color: '#555',
+        color: '#153A71',
     },
 });

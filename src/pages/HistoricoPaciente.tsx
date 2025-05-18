@@ -23,10 +23,7 @@ export default function HistoricoPaciente({ navigation }) {
                 valorSelecionado={valor}
                 aoSelecionar={setValor}
                 opcoes={[
-                    { rotulo: 'Opção A', valor: 'a' },
-                    { rotulo: 'Opção B', valor: 'b' },
-                    { rotulo: 'Opção B', valor: 'b' },
-                    { rotulo: 'Opção B', valor: 'b' },
+                    {rotulo:"Eletroencefalograma", valor: "1"},
                 ]}
             />
 
@@ -36,10 +33,28 @@ export default function HistoricoPaciente({ navigation }) {
                 valorSelecionado={valor}
                 aoSelecionar={setValor}
                 opcoes={[
-                    { rotulo: 'Opção A', valor: 'a' },
-                    { rotulo: 'Opção B', valor: 'b' },
-                    { rotulo: 'Opção B', valor: 'b' },
-                    { rotulo: 'Opção B', valor: 'b' },
+
+                ]}
+            />
+
+            <ComponentSeletor
+                titulo='Consultas Realizadas'
+                valorSelecionado={valor}
+                aoSelecionar={setValor}
+                opcoes={[
+                    
+                ]}
+            />
+
+
+            <ComponentSeletor
+                titulo='Exames Realizados'
+                valorSelecionado={valor}
+                aoSelecionar={setValor}
+                opcoes={[
+                    {rotulo:"Eletroencefalograma", valor: "1"},
+                    {rotulo:"Mapeamento Cerebral", valor: "2"},
+                    {rotulo:"Tomografia Craniana", valor: "3"}
                 ]}
             />
 
