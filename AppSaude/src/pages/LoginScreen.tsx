@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 52,
+    fontSize: 54,
     fontWeight: 'bold',
     color: '#ffffff',
     position: 'relative',
